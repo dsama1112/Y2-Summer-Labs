@@ -28,12 +28,18 @@ def fortune(date):
     "You're gonna get evicted soon ", 
     "Watch out for a red object that may change the course of your life "]
 
-    # fortune_options = random.randint(0, len(date))
-    dateoption = len(date)
+    fortunes11= "Watch out for the next blonde you become friends with.."
 
-    datefinal= fortunes10[dateoption]
-    print(datefinal)
-    return render_template("fortune.html", date_html=date, datefinal=datefinal)
+    # fortune_options = random.randint(0, len(date))
+    dateoption = len(date)-1
+    # dateoption = int(date)
+    if dateoption < 10:
+        datefinal= fortunes10[dateoption]
+        return render_template("fortune.html", date_html=date, fortunetelling=datefinal)
+    else:
+        return fortunes11
+
+
 
 
 
