@@ -94,7 +94,9 @@ def thanks():
 
 @app.route('/display')
 def display():
-  return render_template("display.html")
+  show_quotes= db.child("quotes").get().val()
+  print(show_quotes)
+  return render_template("display.html", show_quotes=show_quotes)
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
