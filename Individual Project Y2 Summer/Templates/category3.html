@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+    body {text-align: center; background-color: pink;}
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close button style */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+
+<body>
+<br><br><br><br><br><br><br><br>
+
+<button onclick="openModal(1)">
+    <img src="https://img.taste.com.au/36a7Pwtp/w643-h428-cfill-q90/taste/2017/05/strawberry-and-dark-chocolate-drizzle-cheesecake-bites3-126673-1.jpg" alt="Strawberry and Dark Chocolate Drizzle Cheesecake Bites" width="290" height="370">
+</button>
+
+<div id="recipeModal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(1)">&times;</span>
+        <h2>Strawberry and Dark Chocolate Drizzle Cheesecake Bites</h2>
+        <p>Here is the recipe for the Strawberry and Dark Chocolate Drizzle Cheesecake Bites: </p>
+        <ul>
+            <li>Ingredients: 250g cream cheese, softened, 1/4 cup icing sugar mixture, 1 tsp vanilla bean paste, 19 Oreo cookies, 150g Coles dark chocolate, melted, 8 small strawberries, halved</li>
+            <li>Directions: Using an electric mixer, beat cream cheese, sugar and vanilla for 1 minute or until smooth. Place cream cheese mixture in a snap-lock bag. Snip off 1 corner. Pipe mixture onto 16 cookies. Finely chop remaining cookies. Drizzle cheesecakes with chocolate and sprinkle with chopped cookies. Top with strawberries. Serve. </li>
+            <br/><br/><br/>
+        </ul>
+    </div>
+</div>
+
+
+<button onclick="openModal(2)">
+    <img src="https://img.taste.com.au/lvLy8N7t/w643-h428-cfill-q90/taste/2019/02/keto-lemon-mug-cake-147527-2.jpg" alt="Keto Lemon Mug Dessert Cake" width="290" height="370">
+</button>
+
+<!-- Modal 2 -->
+<div id="recipeModal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(2)">&times;</span>
+        <h2>Keto Lemon Mug Dessert Cake</h2>
+        <p>Here is the recipe for how to make Keto Lemon Mug Dessert Cake:</p>
+        <ul>
+            <li>Ingredients: 20g butter, melted, cooled, 1 egg, 1 tsp finely grated lemon rind, plus extra zested, to serve (optional), 25g (1/4 cup) coconut flour, 1 tbsp ground almonds, 2 tsp xylitol, 1/2 tsp baking powder, 2 tbsp almond milk, 1 tbsp fresh lemon juice. Mascarpone, to serve</li>
+            <li>Directions: Whisk together the butter, egg and lemon rind in a small mixing bowl until combined. Add the flour, almond, xylitol, baking powder, milk and juice. Stir to combine. Transfer mixture to a 250ml (1 cup) heatproof mug or cup and smooth the surface. Microwave on HIGH for 2 minutes. Set aside for 30 seconds. Top with a dollop of mascarpone and extra lemon zest, if using, to serve.</li>
+            <!-- Replace with actual recipe content -->
+        </ul>
+    </div>
+</div>
+
+<!-- Button and modal for Image 3 -->
+<button onclick="openModal(3)">
+    <img src="https://img.taste.com.au/-vHZ5H4p/w643-h428-cfill-q90/taste/2016/11/chocolate-chip-cookies-with-choc-marshmallow-dip-108617-1.jpeg" alt="Chocolate Chip Cookies with Choc-Marshmallow Dip" width="290" height="370">
+</button>
+
+<!-- Modal 3 -->
+<div id="recipeModal3" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(3)">&times;</span>
+        <h2>Chocolate Chip Cookies with Choc-Marshmallow Dip</h2>
+        <p>Here is the recipe for how to make Chocolate Chip Cookies with Choc-Marshmallow Dip:</p>
+        <ul>
+            <li>Ingredients: 75g Coles Brand Belgian Milk Chocolate, 13 white marshmallows, 400g pkt Coles Brand Chocolate Chip Cookies</li>
+            <li>Directions: Preheat oven to 220C or 200C fan-forced. Finely chop Coles Brand Belgian Milk Chocolate. Place in a 1 1/4-cup ovenproof dish. Top with 13 white marshmallows, flat-side up. Bake for 4-5 minutes or until the chocolate melts and marshmallows become golden. Stand for 5 minutes. Serve with Coles Brand Chocolate Chip Cookies for dipping.</li>
+            <!-- Replace with actual recipe content -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Get all modals
+    var modals = document.querySelectorAll('.modal');
+
+    // Function to open a specific modal by index
+    function openModal(index) {
+        modals[index - 1].style.display = 'block'; // Index - 1 because modals array is 0-indexed
+    }
+
+    // Function to close a specific modal by index
+    function closeModal(index) {
+        modals[index - 1].style.display = 'none'; // Index - 1 because modals array is 0-indexed
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        modals.forEach(function(modal) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

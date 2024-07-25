@@ -1,12 +1,138 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+    body {text-align: center; background-color: pink;}
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close button style */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
+
+
 <body>
-	<!-- <form action="/category1" method="POST"> -->
-	<button type="submit">
-		<img src="https://www.southernliving.com/thmb/gee_M98UezeOVrpk622i-zYkCKY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/strawberry-milkshake-3-df5b8b02a0844dfdb47c860476e1b974.jpg" alt="buttonpng" border="0" width="190" 
-     height="250"></button>
-		<a href="nooven1.html">
-		</button></a>
+<br><br><br><br><br><br><br><br>
+
+<button onclick="openModal(1)">
+    <img src="https://assets.epicurious.com/photos/647df8cad9749492c4d5d407/4:3/w_4886,h_3664,c_limit/StrawberryMilkshake_RECIPE_053123_3599.jpg" alt="Strawberry Milkshake" width="290" height="370">
+</button>
+
+<div id="recipeModal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(1)">&times;</span>
+        <h2>Strawberry Milkshake Recipe</h2>
+        <p>Here is the recipe for the Strawberry Milkshake: </p>
+        <ul>
+            <li>Ingredients: 1/4 cup milk, 3 tablespoons sugar, 2 cups halved fresh strawberries, 1-3/4 cups sliced peeled peaches (about 3 medium) or frozen unsweetened sliced peaches, thawed 2 cups vanilla ice cream</li>
+            <li>Directions: Place milk, sugar, strawberries and peaches in a blender; cover and process until fruit is pureed. Add ice cream; cover and process until blended. Serve immediately.</li>
+            <br/><br/><br/>
+        </ul>
+    </div>
+</div>
+
+
+<button onclick="openModal(2)">
+    <img src="https://i2.wp.com/www.twosisterscrafting.com/wp-content/uploads/2020/03/best-ever-rice-krispie-treats-1200-main.jpg" alt="Rice Krispies" width="290" height="370">
+</button>
+
+<!-- Modal 2 -->
+<div id="recipeModal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(2)">&times;</span>
+        <h2>Rice Krispie Treats</h2>
+        <p>Here is the recipe for how to make rice krispie treats:</p>
+        <ul>
+            <li>Ingredients: ¼ cup butter, 4 cups miniature marshmallows, 5 cups crispy rice cereal</li>
+            <li>Directions: Melt butter in a large saucepan over low heat, then add marshmallows and stir until melted and well combined. Cook 2 minutes longer, stirring constantly. Remove from heat. Stir in crispy rice cereal until well coated. Press mixture evenly and firmly into a buttered 9x13-inch pan using a buttered spatula or waxed paper. Cut into 2-inch squares when cool.</li>
+            <!-- Replace with actual recipe content -->
+        </ul>
+    </div>
+</div>
+
+<!-- Button and modal for Image 3 -->
+<button onclick="openModal(3)">
+    <img src="https://windycitybaker.com/wp-content/uploads/2020/08/Banana_Split_24.jpg" alt="Banana Split" width="290" height="370">
+</button>
+
+<!-- Modal 3 -->
+<div id="recipeModal3" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(3)">&times;</span>
+        <h2>Banana Split</h2>
+        <p>Here is the recipe for how to make banana split:</p>
+        <ul>
+            <li>Ingredients: 1 lb. strawberries, chopped, 1/4 c. granulated sugar, 2 tsp. balsamic vinegar, 2 Tbsp. water, divided, 1/2 tsp. cornstarch</li>
+            <li>Directions: In a medium saucepan over medium heat, toss fruit, granulated sugar, vinegar or lime juice, and 1 tbsp. water. Bring to a simmer and cook, mashing occasionally, until fruit is totally broken down, 8 to 10 minutes. Strain syrup, saving fruit solids for another use, and return syrup to saucepan. In a small bowl, whisk cornstarch and remaining 1 tbsp. water, then whisk into syrup. If making pineapple syrup, stir in cinnamon and cayenne. Return to a simmer and cook, stirring occasionally, until syrup has reached your desired consistency, 2 to 3 minutes. Let cool. Make Ahead: Syrup can be made 3 weeks ahead. Transfer to an airtight container and chill. In a medium saucepan over medium-low heat, whisk granulated sugar, milk, and salt until sugar is dissolved. Simmer until you begin to see some bubbling along edges of mixture, 5 to 6 minutes. Reduce heat to low. Whisk in cocoa powder until incorporated with no lumps remaining. Remove from heat and stir in chocolate until melted and smooth. Let cool 3 minutes. Add butter a piece at a time, stirring and letting pieces melt before adding more. Set aside until ready to use. Using an electric mixer on medium-high speed (or in bowl of a stand mixer fitted with whisk attachment), in a medium bowl, beat cream, powdered sugar, and vanilla until stiff peaks form. In a small bowl, mash 1 banana with a fork until no chunks remain. Fold into whipped cream, then transfer to a piping bag fitted with a star tip. Slice remaining 4 bananas in half lengthwise and arrange among sundae bowls. Place 3 scoops ice cream between banana slices. Pipe whipped cream over ice cream. Top with fruit syrup, hot fudge, sprinkles, walnuts, and cherries.</li>
+            <!-- Replace with actual recipe content -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Get all modals
+    var modals = document.querySelectorAll('.modal');
+
+    // Function to open a specific modal by index
+    function openModal(index) {
+        modals[index - 1].style.display = 'block'; // Index - 1 because modals array is 0-indexed
+    }
+
+    // Function to close a specific modal by index
+    function closeModal(index) {
+        modals[index - 1].style.display = 'none'; // Index - 1 because modals array is 0-indexed
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        modals.forEach(function(modal) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+</script>
+<br><br>
+
+<a href="/review">
+	<button>Want to add a comment and rate the experience? Click here</button></a>
+
 </body>
 </html>

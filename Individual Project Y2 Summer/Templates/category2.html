@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <style>
+    body {text-align: center; background-color: pink;}
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* Close button style */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+
+<body>
+<br><br><br><br><br><br><br><br>
+
+<button onclick="openModal(1)">
+    <img src="https://img.taste.com.au/74zNFad2/w643-h428-cfill-q90/taste/2020/11/2-ingredient-truffles-resized-167372-1.jpg" alt="Condensed Milk Truffles" width="290" height="370">
+</button>
+
+<div id="recipeModal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(1)">&times;</span>
+        <h2>Condensed Milk Truffles  Recipe</h2>
+        <p>Here is the recipe for the Condensed Milk Truffles: </p>
+        <ul>
+            <li>Ingredients: 395g can NESTLÉ Sweetened Condensed Milk 30g (1/4 cup) NESTLÉ Plaistowe Premium Dutch Process Cocoa, plus extra to dust</li>
+            <li>Directions: Place the condensed milk and cocoa in a medium saucepan over low heat. Cook, stirring, for 8 minutes or until mixture is very thick. Transfer mixture to a bowl. Set aside to cool slightly before placing in the fridge for 1 hour to set. Use two teaspoonsful of the mixture to roll into smooth balls. Dust in extra cocoa powder to serve. </li>
+            <br/><br/><br/>
+        </ul>
+    </div>
+</div>
+
+
+<button onclick="openModal(2)">
+    <img src="https://bakewithshivesh.com/wp-content/uploads/2020/07/B75C43D6-629D-4E97-B7D7-C358DB531107.jpg" alt="Homemade 'Bounty' Bars" width="290" height="370">
+</button>
+
+<!-- Modal 2 -->
+<div id="recipeModal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(2)">&times;</span>
+        <h2>Homemade ‘Bounty’ Bars</h2>
+        <p>Here is the recipe for how to make homemade ‘Bounty’ bars:</p>
+        <ul>
+            <li>Ingredients: 340g (4 cups) desiccated coconut, 395g can sweetened condensed milk, 290g pkt milk chocolate melts</li>
+            <li>Directions: Line a baking tray with baking paper. Place coconut and sweetened condensed milk in a large bowl and stir until well combined. Shape mixture into 5cm logs. Transfer to prepared tray. Place in the fridge until firm. Place chocolate in a microwave-safe bowl and microwave on High for 1 minute, stirring halfway, until melted and smooth. Using two forks, dip each each coconut bar in chocolate until coated, allowing excess to drip back into bowl. Return to tray and place in fridge until set. Serve.</li>
+            <!-- Replace with actual recipe content -->
+        </ul>
+    </div>
+</div>
+
+<!-- Button and modal for Image 3 -->
+<button onclick="openModal(3)">
+    <img src="https://www.thespruceeats.com/thmb/MRflYRK0gdS9YU_ZAGg5FyuPUPw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4-ingredient-nutella-mug-cake-4133650-hero-5c1914fa46e0fb00018d20c9.jpg" alt="Microwave Oreo Mug Cake" width="290" height="370">
+</button>
+
+<!-- Modal 3 -->
+<div id="recipeModal3" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" onclick="closeModal(3)">&times;</span>
+        <h2>Microwave Orea Mug Cake</h2>
+        <p>Here is the recipe for how to make oreo mug cake by microwave:</p>
+        <ul>
+            <li>Ingredients: 8 oreos, 3 tablespoons whole milk</li>
+            <li>Directions: Using a microwavable mug, smash the oreos into pieces then mix with required amount of milk. Place mug in the microwave for 1.5-3 minutes till ready!</li>
+            <!-- Replace with actual recipe content -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Get all modals
+    var modals = document.querySelectorAll('.modal');
+
+    // Function to open a specific modal by index
+    function openModal(index) {
+        modals[index - 1].style.display = 'block'; // Index - 1 because modals array is 0-indexed
+    }
+
+    // Function to close a specific modal by index
+    function closeModal(index) {
+        modals[index - 1].style.display = 'none'; // Index - 1 because modals array is 0-indexed
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        modals.forEach(function(modal) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
