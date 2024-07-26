@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<head>
+<head> 
+<style>
+	body {text-align: center;}
+</style>
 </head>
 <body>
 {%for q in show_comments.values()%}
 	<h1>{{q}}</h1>
 {% endfor %}
+
+	<form action="/view" method="POST">
+		<button>Click here to delete comment:</button>
+	</form>
 </body>
 </html>

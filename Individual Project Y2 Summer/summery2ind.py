@@ -110,7 +110,25 @@ def view():
 	show_comments= db.child("comments").get().val()
 	print(show_comments)
 	return render_template("view.html", show_comments=show_comments)
-		
+	if request.method=='POST':
+		try:
+			comment2 = request.form['comment']
+			comment_from2 = request.form['comment_from']
+			UID = session['user']['localId']
+			comments2 = {"Name:": comment_from, "Comment:": comment}
+			db.child("comments2").child(UID).remove()
+			return render_template("view.html", comments2=comments2)
+			print(comments2)
+		except:
+			error = "Couldn’t remove object"
+		return "Authentication Failed"
+
+# try:
+# 	UID = login_session['user']['localId']
+# db.child("Users").child(UID).remove()
+# return redirect(url_for('signin'))
+# except:
+# error = "Couldn’t remove object"
 
 if __name__ == '__main__':
 	app.run(debug=True)
